@@ -1,0 +1,210 @@
+<html><head></head><body></body>
+<meta charset="UTF-8">
+<meta content="width=device-width, initial-scale=1, user-scalable=1, minimum-scale=1, maximum-scale=5" name="viewport">
+<meta content="IE=edge" http-equiv="X-UA-Compatible">
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+  <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Caveat&display=swap" rel="stylesheet">
+
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.0.19/dist/sweetalert2.all.min.js"></script>
+  <script src="https://unpkg.com/typeit@8.7.0/dist/index.umd.js"></script>
+  <script src="https://kit.fontawesome.com/4f3ce16e3e.js" crossorigin="anonymous"></script>
+  
+<head>
+<title>Happy Birthday Iky!</title>
+</head>
+<style>
+:root {
+--warna-bg: rgba(0, 0, 0, .3); 
+--tombol-teks: #fff;
+--tombol-bingkai: #fff;
+--bingkai: 18px;
+--gaya-font: 'Nunito Sans', sans-serif;
+--gaya-font2: 'Caveat', cursive;
+}
+body{background-color:#000;font-family:var(--gaya-font);padding: 20px 25px;-webkit-user-select: none; -ms-user-select: none; user-select: none;} a{text-decoration:none;}
+
+/* WATERMARK POJOK KANAN BAWAH */
+body::before{content:"\00A9  html | Ikhsan-project";color:white;opacity:.3;font-size:10px;position:fixed;bottom:25px;right:25px;z-index:2}
+
+#bodyblur{animation: jj 7s infinite;opacity:.5;position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(0,0,0,.3);transition:all 1s ease;} 
+#wallpaper{width:100%;height:100%;transform: scale(1);transition:all 1.7s ease;}
+
+@keyframes jj{0%  {transform: scale(1);} 50% {transform: scale(1.3);} 100% {transform: scale(1);}}
+@keyframes rto{from {transform:scale(1);} to {transform:scale(1.1);}}
+
+blockquote{position:absolute;opacity:0;visibility:hidden;transform: scale(.1);transition:all .7s ease;margin:0;color:var(--tombol-teks);text-shadow: 0px 2px 2px rgba(0, 0, 0, .8);}
+blockquote{width:400px;text-align:center;line-height:1.3em;padding:0}
+blockquote p{font-size:15px;font-weight:400;line-height:1.5em;transition:all .5s ease;margin:0}
+blockquote p:not(#kalimat, #teksnim){display:none;}
+#teksnim, blockquote p span.ft{font-family:var(--gaya-font2);font-size:20px;font-weight:700}
+#teksnim{font-size:22px;position:absolute;opacity:0;transform:scale(0);transition:all .8s ease}
+
+#pergeseran{margin-top:40px;position:absolute;opacity:0;transform:scale(0);transition:all 1s ease;display:flex;flex-wrap:nowrap;align-items:flex-start;justify-content:flex-start;max-width:500px;padding:0 30px; overflow:hidden;scroll-behavior:smooth;scroll-snap-type:x mandatory;}
+#pergeseran p{background:rgba(0, 0, 0, .5);border-left:2px solid #fff;border-right:2px solid #fff; padding:15px;display:flex;flex-wrap:nowrap;text-align:center;line-height:1.4em;align-items:center;justify-content:center;flex-shrink:0; width:90%;margin:0 15px 0 0; scroll-snap-align:center}
+#pergeseran p, #psn{color:white;text-shadow: 0px 2px 2px rgba(0, 0, 0, .8);min-height:150px;}
+#pergeseran p b img{width:80px;height:80px;margin-bottom:20px;}
+
+#Tombol{position:relative;opacity:0;margin-top:20px !important;display:flex;align-items:left;list-style:none;transform: scale(.1);transition:all .7s ease;}
+#Tombol a{cursor:pointer;display:inline-flex;align-items:center; margin:12px 0;transition:all .2s ease;padding:10px;outline:0;border-left:2px solid #fff;border-right:2px solid #fff;background:rgba(0,0,0,.5);color:white;font-size:12px;font-weight:400;white-space:nowrap;z-index:1} 
+
+#Content{position:relative;opacity:0;margin-top:50px;width:100%;height:180px;transition:all .7s ease;}
+#Content > *{display:flex;align-items:center;text-align:center;justify-content:center;margin-top:1px;}
+.kumpulanstiker > img{display:none;background:rgba(255,255,255, .5);box-shadow: 0 4px 30px rgba(255,255,255, 0.2);backdrop-filter: blur(5px);border: 1px solid rgba(255, 255, 255, 1);border-radius: 50%;padding:10px;width:92px;height:92px;}
+#ftAwal > img{width:130px;height:130px;margin-bottom:50px;}
+
+#loveIn{animation: leaves .7s ease-in-out infinite alternate;} 
+@keyframes leaves {0% {transform: scale(1.0);} 100% {transform: scale(.85);}}
+.lovein{background:#fff;border-radius:50%;width:40px;height:40px;padding:10px;display:flex;align-items:center;justify-content:center;transition:all .3s ease;}
+.lovein svg{stroke:#ff0000;stroke-width:1.3;fill:none;width:35px;height:35px}
+
+.swal2-modal{background: rgba(0,0,0, .6);backdrop-filter: blur(3px);border: 1px solid rgba(255, 255, 255, 0.3);border-radius: 14px;max-width:280px;}
+.swal2-image{background: rgba(255, 255, 255, 0.5);border-radius: 50%;padding:10px;}
+
+.fa-heart {opacity:.3;color:white;font-size: 20px;position: absolute;animation: heartMove linear 1;top: -10vh;z-index: 0;}
+@keyframes heartMove {0%{transform: translateY(-10vh) ;} 100%{transform: translateY(100vh) ;}}
+.sembunyi{display:none !important}
+</style>
+<body>
+	
+   <audio src="https://feeldreams.github.io/audio/anditsnot.mp3" id="linkmp3" class="sembunyi" loop></audio>
+   
+   <div id="bodyblur">
+     <img src="https://feeldreams.github.io/pics/awan3.jpg" id="wallpaper">
+   </div>
+   
+   <div id="Content">
+     <div id="ftAwal">
+       <img src="https://feeldreams.github.io/pandaputih.gif" id="ftoAwal">
+     </div>
+
+     <div id="loveIn">
+       <a href="#" class="lovein"><svg class="line" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><g transform="translate(2.550170, 3.550158)"><path d="M0.371729633,8.89614246 C-0.701270367,5.54614246 0.553729633,1.38114246 4.07072963,0.249142462 C5.92072963,-0.347857538 8.20372963,0.150142462 9.50072963,1.93914246 C10.7237296,0.0841424625 13.0727296,-0.343857538 14.9207296,0.249142462 C18.4367296,1.38114246 19.6987296,5.54614246 18.6267296,8.89614246 C16.9567296,14.2061425 11.1297296,16.9721425 9.50072963,16.9721425 C7.87272963,16.9721425 2.09772963,14.2681425 0.371729633,8.89614246 Z"></path><path d="M13.23843,4.013842 C14.44543,4.137842 15.20043,5.094842 15.15543,6.435842"></path></g></svg></a>
+     </div>
+     <p id="ket">Sentuh LOVEnya!</p>
+
+     <div class="kumpulanstiker">
+         <img src="https://feeldreams.github.io/cilukba.gif" id="fotostiker">
+         <img src="https://feeldreams.github.io/pandaputih.gif" id="fotostikerPopup">
+         <img src="https://feeldreams.github.io/weee.gif" id="fotostikerPopupCon">
+         <img src="https://feeldreams.github.io/ngumpet.gif" id="fotostikerPopupCan">
+     </div>
+     
+     <div><div id="pergeseran">
+     	<p><b><img src="https://feeldreams.github.io/bunga.gif"><br><span>Hai Iky 🤭❤️</span></b></p>
+        <p><b><img src="https://feeldreams.github.io/pusn.gif"><br><span>Zalfa Cuma Mau<br>Bilang Nih 😆</span></b></p>
+        <p><b><img src="https://feeldreams.github.io/cilukba.gif"><br><span>Ciyee yang Hari Ini Ultah 😜</span></b></p>
+        <p><b><img src="https://feeldreams.github.io/g5.gif"><br><span class="ft">Selamat Ulang Tahun<br>yang ke-13! 🥳</span></b></p>
+        <p><b><img src="https://feeldreams.github.io/mndkat.gif"><br><span>Panjang Umur dan<br>Sehat Selalu yaa 🥰</span></b></p>
+     </div></div>
+     
+     <div><blockquote id="bq">
+       <p id="teksnim">Happy 13th Level Up! 🥳</p>
+       <p id="kalimat"><span id="klganti">Semangat terus yaa! 🤣<br><br></span>Intinya semoga di hari bertambahnya<br>usia yang ke-13 ini, kamu bisa menjadi<br>pribadi yang lebih baik lagi yaa.. 🥳<br><br><span class="ft">Wish You All The Best ✨<br>- Dari Zalfa</span></p>
+     </blockquote></div>
+     
+     <div id="Tombol">
+       <a onClick="multifungsi()"><b id="tmbl">Geser 👉</b></a>
+     </div>
+   </div>
+
+<script>
+const body = document.querySelector("body"); const swals = Swal.mixin({timer: 99999, allowOutsideClick: false, showConfirmButton: true, timerProgressBar: false, imageHeight: 90,}); 
+const audio = document.getElementById('linkmp3'); 
+fungsiAwal=0;
+
+// FUNGSI MUSIK MATI OTOMATIS SAAT KELUAR TAB
+document.addEventListener("visibilitychange", function() {
+    if (document.hidden) { audio.pause(); } else if (fungsiAwal==1) { audio.play(); }
+});
+
+function berjatuhan() {const heart = document.createElement("div"); heart.className = "fas fa-heart"; heart.style.left = (Math.random() * 90)+"vw"; heart.style.animationDuration = (Math.random()*3)+2+"s"; body.appendChild(heart);} 
+setInterval(function() {var heartArr = document.querySelectorAll(".fa-heart"); if (heartArr.length > 100) {heartArr[0].remove()}},100);
+
+Content.style = "opacity:1;margin-top:14vh"; 
+
+// TANGGAL DI POJOK KIRI BAWAH
+var date = new Date();
+var days = ["Minggu", "Senin", "Selasa", "Rabu", "Kamis", "Jumat", "Sabtu"];
+var months = ["Januari", "Februari", "Maret", "April", "Mei", "Juni", "Juli", "Agustus", "September", "Oktober", "November", "Desember"];
+var dateMark = document.createElement("div");
+dateMark.textContent = days[date.getDay()] + ", " + date.getDate() + " " + months[date.getMonth()] + " " + date.getFullYear();
+dateMark.style = "color:white;opacity:.5;font-size:10px;position:fixed;bottom:25px;left:25px;z-index:2";
+document.getElementById("Content").appendChild(dateMark);
+
+document.getElementById("loveIn").onclick = function() {
+    if(fungsiAwal==0){
+        loveIn.style="transition:all .5s ease;opacity:0";
+        ftAwal.style="transition:all .5s ease;opacity:0";
+        ket.style="transition:all .5s ease;opacity:0";
+        fungsiAwal=1; setTimeout(initengahan,300);
+    }
+}
+  
+function initengahan(){
+    ftAwal.style="display:none";loveIn.style="display:none";ket.style="display:none";
+    Content.style = "opacity:1;margin-top:10vh";
+    setTimeout(inipesan,200); audio.play();
+}
+  
+aktigeser=0;thisgeser=1;
+document.getElementById("bodyblur").onclick = function() {multifungsi()}
+
+function multifungsi(){
+  if(aktigeser==1){
+    if(thisgeser==document.getElementById('pergeseran').children.length){aksiakhir()}
+    document.getElementById('pergeseran').scrollLeft += 300;
+    hsementara();
+  }
+}
+
+async function inipesan(){nama = "Iky"; setTimeout(pgmuncul,200);}
+function hsementara(){Tombol.style=""; thisgeser+=1;aktigeser=0;setTimeout(munculkembali,500)}
+function munculkembali(){if(thisgeser<=document.getElementById('pergeseran').children.length){Tombol.style="opacity:1;transform: scale(1)";aktigeser=1;}}
+function aksiakhir(){pergeseran.style="position:relative;"; Tombol.style=""; setTimeout(aksibalas,500);}
+function pgmuncul(){pergeseran.style="position:relative;opacity:1;transform:scale(1);";setTimeout(munculkembali,500)}
+
+function kalimatakhir(){
+    new TypeIt("#kalimat", {
+      strings: ["" + katakata], startDelay: 50, speed: 54, cursor: true,
+      afterComplete: function(){
+          kalimat.innerHTML = katakata;
+          setTimeout(munculteksnim,300);
+      },}).go();
+}
+
+function munculteksnim(){
+    klganti.style="display:none";
+    teksnim.style="position:relative;opacity:1;transform:scale(1);";
+    setTimeout(function(){teksnim.style.animation="rto .8s infinite alternate";},550);
+    setInterval(berjatuhan,250);
+}
+
+function bqmuncul(){
+    katakata = (poinjwb==1) ? kalimat.innerHTML : "Yah kok nolak 🤣<br><br>" + kalimat.innerHTML;
+    kalimat.innerHTML = "";
+    Content.style = "opacity:1;margin-top:8vh";
+    document.querySelector(".kumpulanstiker").style="display:none";
+    pergeseran.style="display:none";
+    bq.style = "position:relative;opacity:1;visibility:visible;margin-top:5vh;transform: scale(1);";
+    setTimeout(kalimatakhir,200);
+}
+  
+async function aksibalas(){
+    var { isConfirmed: prtanya } = await swals.fire({
+      title: nama + ' Mau Kado Gak Nih? 🤭❤️',
+      imageUrl: document.getElementById('fotostikerPopup').src, showCancelButton: true, confirmButtonText: 'Mau', cancelButtonText: 'Gamau',});
+    if(prtanya){
+       await swals.fire({title: 'Tapi Boong! 🤣', html: 'Gajadi ngasih kado ah<br>soalnya kamu bau 😜❤️', imageUrl: document.getElementById('fotostikerPopupCon').src});
+       poinjwb=1;
+    } else {
+       await swals.fire({title: 'Yaaahh!', html: 'Yaudah kalo gamau 😜❤️', imageUrl: document.getElementById('fotostikerPopupCan').src});
+       poinjwb=2;
+    }
+    bqmuncul();
+}
+</script>
+</body>
+</html>
